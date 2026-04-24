@@ -438,7 +438,7 @@ const S = [
   // ── B2B / SALES ──
   {n:"ZoomInfo",          t:"B2B / Sales",        id:false, r:"1–2 wks",   o:"https://privacy.zoominfo.com/privacy-center",                 p:"https://www.zoominfo.com/privacy"},
   {n:"Apollo.io",         t:"B2B / Sales",        id:false, r:"1 week",    o:"https://www.apollo.io/privacy-policy",                       p:"https://www.apollo.io/privacy-policy"},
-  {n:"Hunter.io",         t:"B2B / Sales",        id:false, r:"3–7 days",  o:"https://hunter.io/privacy/gdpr",                             p:"https://hunter.io/privacy"},
+
   {n:"Lusha",             t:"B2B / Sales",        id:false, r:"1–2 wks",   o:"https://www.lusha.com/privacy-policy/",                       p:"https://www.lusha.com/privacy-policy/"},
   {n:"Clearbit",          t:"B2B / Sales",        id:false, r:"1–2 wks",   o:"https://clearbit.com/privacy-policy",                        p:"https://clearbit.com/privacy-policy"},
   {n:"Cognism",           t:"B2B / Sales",        id:false, r:"1–2 wks",   o:"https://www.cognism.com/privacy-policy",                     p:"https://www.cognism.com/privacy-policy"},
@@ -455,7 +455,7 @@ const S = [
   {n:"Ripoff Report",     t:"Reputation",         id:false, r:"Varies",    o:"https://www.ripoffreport.com/arbitration",                    p:"https://www.ripoffreport.com/privacy"},
   {n:"Glassdoor",         t:"Reputation",         id:false, r:"7–14 days", o:"https://help.glassdoor.com/s/article/Privacy-Policy",         p:"https://help.glassdoor.com/s/article/Privacy-Policy"},
   {n:"PissedConsumer",    t:"Reputation",         id:false, r:"7–14 days", o:"https://www.pissedconsumer.com/privacy-policy.html",          p:"https://www.pissedconsumer.com/privacy-policy.html"},
-  {n:"Trustpilot",        t:"Reputation",         id:false, r:"7–14 days", o:"https://support.trustpilot.com/hc/en-us/articles/360000425046",p:"https://www.trustpilot.com/privacy"},
+
 ];
 
 // ── STATE ──
@@ -678,5 +678,132 @@ render();
     If you have questions about this policy, there is no contact form because no data is collected.
     This site is designed to be fully offline-friendly and privacy-first by default.
   </p>
+
+  <div id="privacy-fullscreen-bg" style="position: fixed; inset: 0; width: 100vw; height: 100vh; z-index: 999999; display: none; align-items: center; justify-content: center; background: #020617; background: radial-gradient(circle at 0% 0%, #1e1b4b 0%, transparent 50%), radial-gradient(circle at 100% 100%, #581c87 0%, transparent 50%), radial-gradient(circle at 50% 50%, #020617 0%, #000 100%); font-family: 'Inter', system-ui, -apple-system, sans-serif; overflow-y: auto; transition: opacity 0.6s ease;">
+
+    <style>
+        :root {
+            --glass-white: rgba(255, 255, 255, 0.12);
+            --glass-border: rgba(255, 255, 255, 0.35);
+            --text-pure: #ffffff;
+        }
+
+        .jelly-card {
+            position: relative;
+            width: 400px;
+            padding: 35px 35px 45px 35px; 
+            border-radius: 44px;
+            background: var(--glass-white);
+            backdrop-filter: blur(40px) saturate(180%) contrast(110%);
+            -webkit-backdrop-filter: blur(40px) saturate(180%) contrast(110%);
+            border: 1px solid var(--glass-border);
+            box-shadow: 0 40px 100px rgba(0,0,0,0.7), inset 0 10px 15px rgba(255,255,255,0.2);
+            text-align: center;
+            color: var(--text-pure);
+            transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+            margin: 20px;
+        }
+
+        .jelly-card * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; outline: none; }
+
+        .text-container {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 24px;
+            border-radius: 30px;
+            margin-bottom: 25px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .jelly-card h1 { font-size: 1.4rem; margin: 0 0 10px; font-weight: 800; letter-spacing: -0.03em; }
+        .jelly-card p { font-size: 0.9rem; line-height: 1.6; color: rgba(255, 255, 255, 0.85); }
+
+        .checkbox-wrapper { display: flex; align-items: center; justify-content: center; gap: 12px; margin-bottom: 25px; cursor: pointer; }
+        .checkbox-wrapper input { display: none; }
+
+        .custom-check {
+            width: 22px; height: 22px; border-radius: 7px;
+            background: rgba(255,255,255,0.1); border: 1px solid var(--glass-border);
+            position: relative; transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        input:checked + .custom-check { background: #fff; transform: scale(1.1); box-shadow: 0 0 15px rgba(255,255,255,0.4); }
+        input:checked + .custom-check::after {
+            content: ""; position: absolute; width: 5px; height: 10px; border: solid black;
+            border-width: 0 2.5px 2.5px 0; left: 50%; top: 45%; transform: translate(-50%, -50%) rotate(45deg);
+        }
+
+        .check-label { font-size: 0.85rem; color: rgba(255,255,255,0.6); transition: color 0.3s; }
+        input:checked ~ .check-label { color: #fff; }
+
+        .btn-main {
+            width: 100%; background: rgba(255, 255, 255, 0.1); color: rgba(255, 255, 255, 0.3);
+            border: none; padding: 18px; border-radius: 20px; font-weight: 800; font-size: 1rem;
+            cursor: not-allowed; transition: all 0.4s ease;
+        }
+
+        .btn-main.enabled { background: #fff; color: #000; cursor: pointer; box-shadow: 0 15px 30px rgba(0,0,0,0.3); }
+        .btn-ghost { margin-top: 15px; background: none; color: rgba(255, 255, 255, 0.4); border: none; font-size: 0.8rem; text-decoration: underline; cursor: pointer; }
+
+        #policy-drawer {
+            max-height: 0; overflow: hidden; transition: max-height 0.6s cubic-bezier(0.23, 1, 0.32, 1), opacity 0.4s ease;
+            text-align: left; font-size: 0.78rem; color: rgba(255, 255, 255, 0.7); opacity: 0;
+        }
+        
+        #policy-drawer.open { max-height: 700px; margin-top: 20px; padding-top: 15px; border-top: 1px solid rgba(255, 255, 255, 0.1); opacity: 1; }
+    </style>
+
+    <div class="jelly-card" id="card">
+        <div class="text-container">
+            <h1>Private & Secure</h1>
+            <p>We do not track, collect, or sell your data. Pressing "I understand" confirms you agree to our privacy standards.</p>
+        </div>
+
+        <label class="checkbox-wrapper">
+            <input type="checkbox" id="consent-check" onchange="const b=document.getElementById('submit-btn'); if(this.checked){b.className='btn-main enabled'}else{b.className='btn-main'}">
+            <div class="custom-check"></div>
+            <span class="check-label">I agree to the privacy policy</span>
+        </label>
+
+        <button class="btn-main" id="submit-btn" onclick="acceptPrivacy()">I understand</button>
+        
+        <button class="btn-ghost" onclick="document.getElementById('policy-drawer').classList.toggle('open')">Read Policy Details</button>
+
+        <div id="policy-drawer">
+            <p style="margin-bottom: 12px;"><b>Storage:</b> We use <b>LocalStorage</b> to save your preferences directly on your browser. This data is never sent to our servers.</p>
+            <p style="margin-bottom: 12px;"><b>Affiliation:</b> DeleteMeNow is not affiliated with any third-party services linked on this website.</p>
+            <p style="margin-bottom: 12px;"><b>Cookies:</b> We do not use any tracking or advertising cookies.</p>
+            <p><b>Privacy:</b> No personal data is collected. You remain 100% anonymous.</p>
+        </div>
+    </div>
+
+    <script>
+        // Check if they already agreed
+        window.addEventListener('DOMContentLoaded', () => {
+            const overlay = document.getElementById('privacy-fullscreen-bg');
+            if (localStorage.getItem('privacyAccepted') !== 'true') {
+                overlay.style.display = 'flex';
+            } else {
+                overlay.remove(); // Get rid of it entirely if they agreed
+            }
+        });
+
+        function acceptPrivacy() {
+            const check = document.getElementById('consent-check');
+            const card = document.getElementById('card');
+            const overlay = document.getElementById('privacy-fullscreen-bg');
+
+            if (check.checked) {
+                // Save to LocalStorage
+                localStorage.setItem('privacyAccepted', 'true');
+                
+                // Animate out
+                card.style.transform = 'scale(0.8) translateY(50px)';
+                card.style.opacity = '0';
+                overlay.style.opacity = '0';
+                setTimeout(() => overlay.remove(), 600);
+            }
+        }
+    </script>
+</div>
 
 </div>
