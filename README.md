@@ -2,6 +2,13 @@
 DeleteMeNow is a directory of data removal links from data brokers and online services. Find the site you need and submit your removal request in minutes.
 
 # deletemenow — not affiliated with any listed service
+# This project is licensed under the MIT License.
+
+Additional Terms:
+- This software may not be used for commercial purposes.
+- You must provide clear attribution to the original creator (your name or link).
+- The author is not responsible for any damages or misuse.
+
 
 # Privacy Policy
 
