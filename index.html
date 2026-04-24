@@ -1,69 +1,3 @@
-
-<!-- PRIVACY BUTTON (BOTTOM OF PAGE) -->
-<div style="margin-top:60px;text-align:center;">
-  <button class="pill-btn" onclick="openPrivacy()">Privacy Policy</button>
-</div>
-
-<!-- PRIVACY MODAL -->
-<div class="modal-bg" id="privacyModal">
-  <div class="modal">
-    <h3>Privacy Policy</h3>
-
-    <div style="overflow:auto;line-height:1.75;font-size:13px;color:var(--muted);max-height:60vh;">
-
-      <p><b style="color:var(--text);">DeleteMeNow Privacy Policy</b></p><br>
-
-      <p>
-        This website does not collect, store, sell, share, or process any personal data. We do not use cookies, analytics, tracking scripts, or third-party data services.
-      </p><br>
-
-      <p>
-        All progress tracking (checkbox states) is stored locally in your browser using localStorage. This data never leaves your device and is not transmitted anywhere.
-      </p><br>
-
-      <p>
-        We do not require accounts, logins, email addresses, or any form of user identification. There is no user database.
-      </p><br>
-
-      <p>
-        External links (such as data broker opt-out pages) are provided for convenience only. We are not responsible for their privacy practices nor affiliated with any of the listed services.
-      </p><br>
-
-      <p>
-        If you have questions about this policy, there is no contact form because no data is collected. This site is designed to be fully offline-friendly and privacy-first by default.
-      </p>
-
-      <p>
-This project is provided “as is.” The author is not responsible for any damages or issues resulting from its use.
-      </p>
-
-    </div>
-
-    <div class="modal-btns">
-      <button class="pill-btn" onclick="closePrivacy()">Close</button>
-    </div>
-  </div>
-</div>
-
-<script>
-function openPrivacy() {
-  document.getElementById("privacyModal").classList.add("open");
-}
-
-function closePrivacy() {
-  document.getElementById("privacyModal").classList.remove("open");
-}
-
-// close when clicking outside modal
-document.getElementById("privacyModal").addEventListener("click", function(e){
-  if (e.target === this) closePrivacy();
-});
-</script>
-
-
-
-</script>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -88,51 +22,21 @@ document.getElementById("privacyModal").addEventListener("click", function(e){
 }
 html{scroll-behavior:smooth}
 body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;line-height:1.6;font-size:15px}
-<!-- DISCLAIMER POPUP -->
-<div class="modal-bg" id="disclaimer-modal">
-  <div class="modal">
-    <h3>Before you start</h3>
-
-    <div style="font-size:13px; color:var(--muted); line-height:1.7;">
-      <p style="margin-bottom:10px;">
-        This tool is not affiliated with any data broker or service listed.
-      </p>
-
-      <p style="margin-bottom:10px;">
-        Opt-out links are provided for convenience and may change over time.
-        We cannot guarantee removal success or accuracy of external websites.
-      </p>
-
-      <p>
-        All progress is stored locally in your browser only.
-      </p>
-    </div>
-
-    <div class="modal-btns">
-      <button class="pill-btn danger" onclick="acceptDisclaimer()">
-        I understand
-      </button>
-    </div>
-  </div>
-</div>
-/* BG texture */
 body::before{content:"";position:fixed;inset:0;background:
   radial-gradient(ellipse 800px 500px at 10% 0%,rgba(0,229,160,0.03) 0%,transparent 60%),
   radial-gradient(ellipse 600px 400px at 90% 80%,rgba(77,159,255,0.025) 0%,transparent 60%);
   pointer-events:none;z-index:0}
-
 .wrap{position:relative;z-index:1;max-width:1020px;margin:0 auto;padding:48px 20px 100px}
 
-/* ── HERO ── */
+/* HERO */
 .hero{display:flex;align-items:flex-start;justify-content:space-between;gap:40px;margin-bottom:48px;flex-wrap:wrap}
-.hero-left{}
 .eyebrow{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--acc);letter-spacing:0.15em;text-transform:uppercase;margin-bottom:14px;display:flex;align-items:center;gap:8px}
 .eyebrow::before{content:"";width:20px;height:1px;background:var(--acc);display:inline-block}
 h1{font-family:'Syne',sans-serif;font-size:52px;font-weight:800;line-height:1.0;letter-spacing:-2px;color:#fff;margin-bottom:14px}
 h1 em{color:var(--acc);font-style:normal}
 .tagline{font-size:15px;color:var(--muted);max-width:460px;line-height:1.75;font-weight:300}
 
-/* progress panel */
+/* PROGRESS PANEL */
 .prog-panel{background:var(--s1);border:1px solid var(--border);border-radius:16px;padding:20px 24px;min-width:240px;flex-shrink:0}
 .prog-top{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:12px}
 .prog-label{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:0.1em}
@@ -143,13 +47,13 @@ h1 em{color:var(--acc);font-style:normal}
 .prog-stat{text-align:center}
 .prog-stat-n{font-family:'IBM Plex Mono',monospace;font-size:18px;font-weight:600;color:var(--text);display:block}
 .prog-stat-l{font-size:11px;color:var(--muted);display:block;margin-top:1px}
-.prog-actions{display:flex;gap:8px;margin-top:14px}
+.prog-actions{display:flex;gap:8px;margin-top:14px;flex-wrap:wrap}
 .pill-btn{font-size:12px;font-weight:500;font-family:'DM Sans',sans-serif;padding:6px 12px;border-radius:8px;cursor:pointer;border:1px solid var(--border2);background:var(--s2);color:var(--muted);transition:all .15s;white-space:nowrap}
 .pill-btn:hover{color:var(--text);border-color:rgba(255,255,255,0.2)}
 .pill-btn.danger{color:var(--red);border-color:rgba(255,94,94,0.2)}
 .pill-btn.danger:hover{background:var(--red-dim)}
 
-/* ── CONTROLS ── */
+/* CONTROLS */
 .controls{display:flex;gap:10px;margin-bottom:18px;flex-wrap:wrap}
 .search-wrap{position:relative;flex:1;min-width:200px}
 .s-icon{position:absolute;left:14px;top:50%;transform:translateY(-50%);color:var(--muted);font-size:15px;pointer-events:none;font-family:'IBM Plex Mono',monospace}
@@ -161,23 +65,22 @@ input[type="search"]:focus{border-color:rgba(0,229,160,0.35);background:var(--s2
 .ctrl-select{padding:11px 14px;border-radius:10px;border:1px solid var(--border);background:var(--s1);color:var(--text);font-size:13px;font-family:'DM Sans',sans-serif;outline:none;cursor:pointer;transition:border-color .2s;-webkit-appearance:none;appearance:none;padding-right:30px;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%235a6f82' d='M6 8L1 3h10z'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 10px center}
 .ctrl-select:focus{border-color:rgba(0,229,160,0.35)}
 
-/* ── FILTERS ── */
+/* CATEGORY FILTERS */
 .filters{display:flex;gap:7px;margin-bottom:24px;flex-wrap:wrap;align-items:center}
 .f-label{font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:0.1em;margin-right:4px}
 .f-btn{font-size:12px;font-weight:500;font-family:'DM Sans',sans-serif;padding:5px 12px;border-radius:20px;cursor:pointer;border:1px solid var(--border);background:transparent;color:var(--muted);transition:all .15s;white-space:nowrap;display:inline-flex;align-items:center;gap:5px}
 .f-btn:hover{border-color:var(--border2);color:var(--text)}
 .f-btn.active{border-color:rgba(0,229,160,0.4);background:var(--acc-dim);color:var(--acc)}
-.f-dot{width:6px;height:6px;border-radius:50%;display:inline-block}
-.f-divider{width:1px;height:18px;background:var(--border);margin:0 4px}
+.f-dot{width:6px;height:6px;border-radius:50%;display:inline-block;flex-shrink:0}
 
-/* ── SECTION HEADER ── */
+/* SECTION HEADER */
 .sec{margin-bottom:10px}
 .sec-row{display:flex;align-items:center;gap:10px;padding:6px 0}
 .sec-title{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.15em;text-transform:uppercase;color:var(--muted);white-space:nowrap}
 .sec-line{flex:1;height:1px;background:var(--border)}
-.sec-count{font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--acc);background:var(--acc-dim);padding:2px 9px;border-radius:20px}
+.sec-count{font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--acc);background:var(--acc-dim);padding:2px 9px;border-radius:20px;white-space:nowrap}
 
-/* ── LIST ── */
+/* LIST ITEMS — desktop: 3-col grid */
 #list{display:flex;flex-direction:column;gap:3px}
 
 .item{
@@ -191,7 +94,6 @@ input[type="search"]:focus{border-color:rgba(0,229,160,0.35);background:var(--s2
   border-radius:10px;
   transition:background .15s,border-color .15s,opacity .15s;
   animation:fadeIn .25s ease both;
-  position:relative;
 }
 @keyframes fadeIn{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:translateY(0)}}
 .item:hover{background:var(--s2);border-color:var(--border2)}
@@ -200,23 +102,23 @@ input[type="search"]:focus{border-color:rgba(0,229,160,0.35);background:var(--s2
 .item.done .item-icon{background:var(--acc-dim);border-color:rgba(0,229,160,0.3)}
 
 /* checkbox */
-.cb-wrap{display:flex;align-items:center;justify-content:center}
+.cb-wrap{display:flex;align-items:center;justify-content:center;align-self:start;padding-top:2px}
 .cb{width:18px;height:18px;border-radius:5px;border:1.5px solid var(--dim);background:transparent;cursor:pointer;appearance:none;-webkit-appearance:none;transition:all .15s;flex-shrink:0;position:relative}
 .cb:checked{background:var(--acc);border-color:var(--acc)}
-.cb:checked::after{content:"";position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='11' height='8' viewBox='0 0 11 8'%3E%3Cpath d='M1 4l3 3 6-6' stroke='%23000' stroke-width='2' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/11px no-repeat}
+.cb:checked::after{content:"";position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='11' height='8' viewBox='0 0 11 8'%3E%3Cpath d='M1 4l3 3 6-6' stroke='%23000' stroke-width='2' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/11px no-repeat}
 .cb:hover:not(:checked){border-color:var(--acc);background:var(--acc-dim)}
 
 /* item body */
-.item-body{display:flex;align-items:center;gap:12px;min-width:0}
-.item-icon{width:32px;height:32px;border-radius:8px;background:var(--s3);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:600;color:var(--acc);flex-shrink:0;transition:all .15s}
+.item-body{display:flex;align-items:flex-start;gap:12px;min-width:0}
+.item-icon{width:32px;height:32px;border-radius:8px;background:var(--s3);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:600;color:var(--acc);flex-shrink:0;transition:all .15s;margin-top:1px}
 .item-info{min-width:0;flex:1}
-.item-name{font-size:14px;font-weight:500;color:var(--text);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;transition:all .15s}
-.item-tags{display:flex;gap:6px;margin-top:4px;flex-wrap:wrap}
+.item-name{font-size:14px;font-weight:500;color:var(--text);overflow:hidden;text-overflow:ellipsis;transition:all .15s;white-space:nowrap}
+.item-tags{display:flex;gap:6px;margin-top:5px;flex-wrap:wrap;align-items:center}
 .cat-tag{font-size:10px;font-weight:500;padding:2px 7px;border-radius:6px;white-space:nowrap}
 .id-tag{font-size:10px;font-weight:500;padding:2px 7px;border-radius:6px;white-space:nowrap;background:var(--amber-dim);color:var(--amber)}
-.time-tag{font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--muted);padding:2px 0}
+.time-tag{font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--muted)}
 
-/* item actions */
+/* action buttons — always visible */
 .item-actions{display:flex;gap:7px;flex-shrink:0;align-items:center}
 .btn{font-size:12px;font-weight:500;font-family:'DM Sans',sans-serif;padding:7px 14px;border-radius:8px;text-decoration:none;transition:all .15s;white-space:nowrap;display:inline-flex;align-items:center;gap:4px;cursor:pointer;border:none;outline:none}
 .btn-opt{background:var(--acc-dim);color:var(--acc);border:1px solid rgba(0,229,160,0.2)}
@@ -225,117 +127,233 @@ input[type="search"]:focus{border-color:rgba(0,229,160,0.35);background:var(--s2
 .btn-priv:hover{color:var(--text);border-color:var(--border2)}
 .arrow{font-size:10px}
 
-/* priority badge on item */
-.priority-stripe{position:absolute;left:0;top:8px;bottom:8px;width:3px;border-radius:2px}
-
-/* ── NOTICE ── */
+/* NOTICE */
 .notice{margin-top:40px;padding:14px 18px;background:rgba(255,179,71,0.07);border:1px solid rgba(255,179,71,0.2);border-radius:12px;font-size:13px;color:rgba(255,179,71,0.9);display:flex;gap:10px;align-items:flex-start;line-height:1.65}
 .notice b{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--amber);flex-shrink:0;padding-top:2px}
 
-/* ── EMPTY ── */
+/* EMPTY */
 .empty{text-align:center;padding:70px 0;color:var(--muted);font-size:14px}
 .empty-icon{font-size:32px;display:block;margin-bottom:10px;opacity:0.3;font-family:'IBM Plex Mono',monospace}
 
-/* ── FOOTER ── */
+/* FOOTER */
 footer{margin-top:60px;padding-top:20px;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
 .foot-l{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--dim)}
-.foot-r{font-size:12px;color:var(--dim)}
+.foot-r{font-size:12px;color:var(--dim);display:flex;gap:12px;align-items:center}
 
-/* ── EXPORT modal ── */
-.modal-bg{position:fixed;inset:0;background:rgba(0,0,0,0.7);z-index:100;display:none;align-items:center;justify-content:center;backdrop-filter:blur(4px)}
+/* MODALS */
+.modal-bg{position:fixed;inset:0;background:rgba(0,0,0,0.75);z-index:100;display:none;align-items:center;justify-content:center;backdrop-filter:blur(5px);padding:16px}
 .modal-bg.open{display:flex}
-.modal{background:var(--s2);border:1px solid var(--border2);border-radius:16px;padding:28px;max-width:520px;width:90%;max-height:80vh;display:flex;flex-direction:column;gap:16px}
+.modal{background:var(--s2);border:1px solid var(--border2);border-radius:16px;padding:28px;max-width:520px;width:100%;max-height:88vh;display:flex;flex-direction:column;gap:16px}
 .modal h3{font-family:'Syne',sans-serif;font-size:18px;font-weight:700;color:#fff}
 .modal textarea{flex:1;min-height:200px;background:var(--s1);border:1px solid var(--border);color:var(--text);font-family:'IBM Plex Mono',monospace;font-size:12px;padding:12px;border-radius:8px;resize:vertical;outline:none;line-height:1.6}
-.modal-btns{display:flex;gap:8px;justify-content:flex-end}
+.modal-scroll{overflow-y:auto;flex:1;max-height:50vh;line-height:1.75;font-size:13px;color:var(--muted)}
+.modal-scroll p{margin-bottom:10px}
+.modal-btns{display:flex;gap:8px;justify-content:flex-end;flex-wrap:wrap}
 
+/* PRIVACY POLICY BLOCK */
+.privacy-block{background:var(--s1);border:1px solid var(--border);border-radius:12px;padding:18px 20px;margin-top:10px;line-height:1.75;color:var(--muted);font-size:13px}
+.privacy-block p{margin-bottom:10px}
+.privacy-block p:last-child{margin-bottom:0}
+
+/* DISCLAIMER OVERLAY */
+#disclaimer-overlay{
+  position:fixed;inset:0;width:100vw;height:100vh;z-index:99999;
+  display:flex;align-items:center;justify-content:center;
+  background:radial-gradient(circle at 0% 0%,#1e1b4b 0%,transparent 50%),
+    radial-gradient(circle at 100% 100%,#581c87 0%,transparent 50%),
+    radial-gradient(circle at 50% 50%,#020617 0%,#000 100%);
+  font-family:'DM Sans',sans-serif;
+  padding:16px;
+  transition:opacity .6s ease;
+}
+.jelly-card{
+  position:relative;width:100%;max-width:400px;
+  padding:35px 28px 40px;border-radius:40px;
+  background:rgba(255,255,255,0.12);
+  backdrop-filter:blur(40px) saturate(180%);
+  -webkit-backdrop-filter:blur(40px) saturate(180%);
+  border:1px solid rgba(255,255,255,0.35);
+  box-shadow:0 40px 100px rgba(0,0,0,0.7),inset 0 10px 15px rgba(255,255,255,0.2);
+  text-align:center;color:#fff;
+  transition:all .6s cubic-bezier(0.23,1,0.32,1);
+}
+.jelly-card .text-container{background:rgba(0,0,0,0.3);padding:22px;border-radius:26px;margin-bottom:22px;border:1px solid rgba(255,255,255,0.05)}
+.jelly-card h2{font-size:1.3rem;margin:0 0 10px;font-weight:800;letter-spacing:-0.03em}
+.jelly-card .sub{font-size:0.88rem;line-height:1.6;color:rgba(255,255,255,0.8)}
+.checkbox-row{display:flex;align-items:center;justify-content:center;gap:12px;margin-bottom:22px;cursor:pointer;-webkit-tap-highlight-color:transparent}
+.checkbox-row input{display:none}
+.custom-check{width:22px;height:22px;border-radius:7px;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.35);position:relative;transition:.3s cubic-bezier(0.175,0.885,0.32,1.275);flex-shrink:0}
+.checkbox-row input:checked + .custom-check{background:#fff;transform:scale(1.1);box-shadow:0 0 15px rgba(255,255,255,0.4)}
+.checkbox-row input:checked + .custom-check::after{content:"";position:absolute;width:5px;height:10px;border:solid black;border-width:0 2.5px 2.5px 0;left:50%;top:45%;transform:translate(-50%,-50%) rotate(45deg)}
+.check-label{font-size:0.85rem;color:rgba(255,255,255,0.6);transition:color .3s;text-align:left}
+.checkbox-row input:checked ~ .check-label{color:#fff}
+.btn-jelly{width:100%;background:rgba(255,255,255,0.1);color:rgba(255,255,255,0.3);border:none;padding:16px;border-radius:18px;font-weight:800;font-size:1rem;cursor:not-allowed;transition:all .4s ease;font-family:'DM Sans',sans-serif}
+.btn-jelly.enabled{background:#fff;color:#000;cursor:pointer;box-shadow:0 15px 30px rgba(0,0,0,0.3)}
+.btn-ghost{margin-top:14px;background:none;color:rgba(255,255,255,0.45);border:none;font-size:0.8rem;text-decoration:underline;cursor:pointer;font-family:'DM Sans',sans-serif;display:block;width:100%;text-align:center}
+#policy-drawer{max-height:0;overflow:hidden;transition:max-height .6s cubic-bezier(0.23,1,0.32,1),opacity .4s ease;text-align:left;font-size:0.78rem;color:rgba(255,255,255,0.7);opacity:0;line-height:1.6}
+#policy-drawer.open{max-height:700px;margin-top:18px;padding-top:14px;border-top:1px solid rgba(255,255,255,0.1);opacity:1}
+#policy-drawer p{margin-bottom:10px}
+
+/* ── MOBILE RESPONSIVE ── */
 @media(max-width:640px){
-  h1{font-size:36px;letter-spacing:-1.5px}
-  .hero{flex-direction:column}
+  h1{font-size:34px;letter-spacing:-1.5px}
+  .hero{flex-direction:column;gap:24px}
   .prog-panel{width:100%}
-  .item{grid-template-columns:28px 1fr}
-  .item-actions{display:none}
   .controls{flex-direction:column}
+  .ctrl-select{width:100%}
+
+  /* On mobile: stack the item into 2 cols (checkbox + content),
+     then buttons stretch full-width below */
+  .item{
+    grid-template-columns:28px 1fr;
+    grid-template-rows:auto auto;
+    gap:10px 12px;
+  }
+  .item-actions{
+    grid-column:1 / -1;      /* span both columns */
+    display:flex;
+    gap:8px;
+    padding-top:2px;
+  }
+  .btn-opt{flex:1;justify-content:center;padding:9px 12px;font-size:13px}
+  .btn-priv{flex:1;justify-content:center;padding:9px 12px;font-size:13px}
+}
+
+@media(max-width:380px){
+  h1{font-size:28px}
+  .item-actions{flex-direction:column}
+  .btn-opt,.btn-priv{width:100%;justify-content:center}
 }
 </style>
 </head>
 <body>
+
+<!-- ── DISCLAIMER OVERLAY ── -->
+<div id="disclaimer-overlay">
+  <div class="jelly-card" id="jelly-card">
+    <div class="text-container">
+      <h2>Before you start</h2>
+      <p class="sub">We don't track, collect, or sell your data. Progress is saved only in your browser. Links are provided for convenience and may change.</p>
+    </div>
+
+    <label class="checkbox-row">
+      <input type="checkbox" id="consent-check">
+      <div class="custom-check"></div>
+      <span class="check-label">I agree to the privacy policy</span>
+    </label>
+
+    <button class="btn-jelly" id="disclaimer-submit" disabled onclick="acceptDisclaimer()">I understand</button>
+    <button class="btn-ghost" onclick="document.getElementById('policy-drawer').classList.toggle('open')">Read Policy Details</button>
+
+    <div id="policy-drawer">
+      <p><b>Storage:</b> We use <b>localStorage</b> to save your progress directly in your browser. This data is never sent anywhere.</p>
+      <p><b>Affiliation:</b> DeleteMeNow is not affiliated with any third-party services linked on this site.</p>
+      <p><b>Cookies:</b> We do not use any tracking or advertising cookies.</p>
+      <p><b>Liability:</b> This project is provided "as is." The author is not responsible for any damages resulting from its use.</p>
+      <p><b>Privacy:</b> No personal data is collected. You remain fully anonymous.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ── MAIN CONTENT ── -->
 <div class="wrap">
 
-<!-- HERO -->
-<div class="hero">
-  <div class="hero-left">
-    <div class="eyebrow">privacy toolkit</div>
-    <h1>Delete<em>Me</em><br>Now</h1>
-    <p class="tagline">Direct opt-out links for US data brokers.<br>Track your progress. No accounts, no middlemen.</p>
-  </div>
-  <div class="prog-panel">
-    <div class="prog-top">
-      <span class="prog-label">Progress</span>
-      <span class="prog-pct" id="pct">0%</span>
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-left">
+      <div class="eyebrow">privacy toolkit</div>
+      <h1>Delete<em>Me</em><br>Now</h1>
+      <p class="tagline">Direct opt-out links for US data brokers.<br>Track your progress. No accounts, no middlemen.</p>
     </div>
-    <div class="prog-bar"><div class="prog-fill" id="prog-fill"></div></div>
-    <div class="prog-stats">
-      <div class="prog-stat"><span class="prog-stat-n" id="ps-done">0</span><span class="prog-stat-l">Done</span></div>
-      <div class="prog-stat"><span class="prog-stat-n" id="ps-left">—</span><span class="prog-stat-l">Left</span></div>
-      <div class="prog-stat"><span class="prog-stat-n" id="ps-total">—</span><span class="prog-stat-l">Total</span></div>
+    <div class="prog-panel">
+      <div class="prog-top">
+        <span class="prog-label">Progress</span>
+        <span class="prog-pct" id="pct">0%</span>
+      </div>
+      <div class="prog-bar"><div class="prog-fill" id="prog-fill"></div></div>
+      <div class="prog-stats">
+        <div class="prog-stat"><span class="prog-stat-n" id="ps-done">0</span><span class="prog-stat-l">Done</span></div>
+        <div class="prog-stat"><span class="prog-stat-n" id="ps-left">—</span><span class="prog-stat-l">Left</span></div>
+        <div class="prog-stat"><span class="prog-stat-n" id="ps-total">—</span><span class="prog-stat-l">Total</span></div>
+      </div>
+      <div class="prog-actions">
+        <button class="pill-btn" onclick="exportList()">Export ↗</button>
+        <button class="pill-btn" id="unchecked-btn" onclick="showOnlyUnchecked()">Unchecked only</button>
+        <button class="pill-btn danger" onclick="resetProgress()">Reset</button>
+      </div>
     </div>
-    <div class="prog-actions">
-      <button class="pill-btn" onclick="exportList()">Export ↗</button>
-      <button class="pill-btn" onclick="showOnlyUnchecked()">Unchecked only</button>
-      <button class="pill-btn danger" onclick="resetProgress()">Reset</button>
+  </div>
+
+  <!-- CONTROLS -->
+  <div class="controls">
+    <div class="search-wrap">
+      <span class="s-icon">⌕</span>
+      <input type="search" id="search" placeholder="Search brokers, categories…" autocomplete="off" spellcheck="false">
+      <span class="s-count" id="s-count"></span>
+    </div>
+    <select class="ctrl-select" id="sort">
+      <option value="default">Sort: Default</option>
+      <option value="az">Sort: A → Z</option>
+      <option value="za">Sort: Z → A</option>
+      <option value="time">Sort: Fastest first</option>
+      <option value="time-desc">Sort: Slowest first</option>
+      <option value="done">Sort: Unchecked first</option>
+    </select>
+    <select class="ctrl-select" id="id-filter">
+      <option value="all">Any ID req.</option>
+      <option value="no">No ID needed</option>
+      <option value="yes">ID might be required</option>
+    </select>
+  </div>
+
+  <!-- CATEGORY FILTERS -->
+  <div class="filters" id="filters">
+    <span class="f-label">Category</span>
+  </div>
+
+  <!-- SECTION HEADER -->
+  <div class="sec">
+    <div class="sec-row">
+      <span class="sec-title">United States</span>
+      <div class="sec-line"></div>
+      <span class="sec-count" id="sec-count">—</span>
     </div>
   </div>
-</div>
 
-<!-- CONTROLS -->
-<div class="controls">
-  <div class="search-wrap">
-    <span class="s-icon">⌕</span>
-    <input type="search" id="search" placeholder="Search brokers, categories…" autocomplete="off" spellcheck="false">
-    <span class="s-count" id="s-count"></span>
+  <!-- LIST -->
+  <div id="list"></div>
+
+  <!-- NOTICE -->
+  <div class="notice">
+    <b>!</b>
+    <span>Data brokers continuously re-collect your info from public records. Opt-outs must be repeated every 3–6 months. Use checkboxes to track progress — saved automatically in your browser.</span>
   </div>
-  <select class="ctrl-select" id="sort" title="Sort by">
-    <option value="default">Sort: Default</option>
-    <option value="az">Sort: A → Z</option>
-    <option value="za">Sort: Z → A</option>
-    <option value="time">Sort: Fastest first</option>
-    <option value="time-desc">Sort: Slowest first</option>
-    <option value="done">Sort: Unchecked first</option>
-  </select>
-  <select class="ctrl-select" id="id-filter" title="ID required">
-    <option value="all">Any ID req.</option>
-    <option value="no">No ID needed</option>
-    <option value="yes">ID might be required</option>
-  </select>
-</div>
 
-<!-- FILTERS -->
-<div class="filters" id="filters">
-  <span class="f-label">Category</span>
-</div>
-
-<!-- SEC HEADER -->
-<div class="sec">
-  <div class="sec-row">
-    <span class="sec-title">United States</span>
-    <div class="sec-line"></div>
-    <span class="sec-count" id="sec-count">97 brokers</span>
+  <!-- PRIVACY POLICY SECTION -->
+  <div class="sec" style="margin-top:56px">
+    <div class="sec-row">
+      <span class="sec-title">Privacy Policy</span>
+      <div class="sec-line"></div>
+      <span class="sec-count">simple + transparent</span>
+    </div>
   </div>
-</div>
+  <div class="privacy-block">
+    <p><b style="color:var(--text)">DeleteMeNow Privacy Policy</b></p>
+    <p>This website does not collect, store, sell, share, or process any personal data. We do not use cookies, analytics, tracking scripts, or third-party data services.</p>
+    <p>All progress tracking (checkbox states) is stored locally in your browser using <span style="color:var(--acc);font-family:'IBM Plex Mono'">localStorage</span>. This data never leaves your device and is not transmitted anywhere.</p>
+    <p>We do not require accounts, logins, email addresses, or any form of user identification. There is no user database.</p>
+    <p>External links are provided for convenience only. We are not responsible for their privacy practices nor affiliated with any listed services.</p>
+    <p>This project is provided "as is." The author is not responsible for any damages or issues resulting from its use.</p>
+  </div>
 
-<!-- LIST -->
-<div id="list"></div>
-
-<div class="notice">
-  <b>!</b>
-  <span>Data brokers continuously re-collect your information from public records. Opt-outs must be repeated every 3–6 months. Use the checkboxes to track what you've completed — progress saves automatically in your browser.</span>
-</div>
-
-<footer>
-  <span class="foot-l">deletemenow — not affiliated with any listed service</span>
-  <span class="foot-r">Links verified Apr 2026</span>
-</footer>
+  <!-- FOOTER -->
+  <footer>
+    <span class="foot-l">deletemenow — not affiliated with any listed service</span>
+    <div class="foot-r">
+      <span>Links verified Apr 2026</span>
+      <button class="pill-btn" onclick="openPrivacy()">Privacy Policy</button>
+    </div>
+  </footer>
 </div>
 
 <!-- EXPORT MODAL -->
@@ -350,7 +368,26 @@ footer{margin-top:60px;padding-top:20px;border-top:1px solid var(--border);displ
   </div>
 </div>
 
+<!-- PRIVACY MODAL -->
+<div class="modal-bg" id="privacyModal">
+  <div class="modal">
+    <h3>Privacy Policy</h3>
+    <div class="modal-scroll">
+      <p><b style="color:var(--text)">DeleteMeNow Privacy Policy</b></p>
+      <p>This website does not collect, store, sell, share, or process any personal data. We do not use cookies, analytics, tracking scripts, or third-party data services.</p>
+      <p>All progress tracking is stored locally in your browser using localStorage. This data never leaves your device.</p>
+      <p>We do not require accounts, logins, email addresses, or any form of user identification. There is no user database.</p>
+      <p>External links are provided for convenience only. We are not responsible for their privacy practices nor affiliated with any listed services.</p>
+      <p>This project is provided "as is." The author is not responsible for any damages resulting from its use.</p>
+    </div>
+    <div class="modal-btns">
+      <button class="pill-btn" onclick="closePrivacy()">Close</button>
+    </div>
+  </div>
+</div>
+
 <script>
+// ── DATA ──
 const CATS = {
   "People Search":       {c:"var(--acc)",   bg:"var(--acc-dim)"},
   "Background Check":    {c:"var(--blue)",  bg:"var(--blue-dim)"},
@@ -361,128 +398,138 @@ const CATS = {
   "Reputation":          {c:"var(--pink)",  bg:"var(--pink-dim)"},
 };
 
-// time sort order
 const TIME_RANK = {"24 hrs":1,"24–48 hrs":2,"24–72 hrs":3,"48 hrs":4,"48–72 hrs":5,"2–5 days":6,"3–5 days":7,"3–7 days":8,"5–7 days":9,"1 week":10,"7 days":11,"7–10 days":12,"7–14 days":13,"1–2 wks":14,"14 days":15,"2–3 wks":16,"2–4 wks":17,"30 days":18,"30–45 days":19,"30+ days":20,"Varies":21};
 
 const S = [
-  // ── PEOPLE SEARCH ──
-  {n:"Whitepages",        t:"People Search",      id:false,  r:"24–72 hrs", o:"https://www.whitepages.com/suppression-requests",              p:"https://www.whitepages.com/privacy"},
-  {n:"Spokeo",            t:"People Search",      id:false, r:"2–5 days",  o:"https://www.spokeo.com/optout",                                p:"https://www.spokeo.com/privacy"},
-  {n:"BeenVerified",      t:"People Search",      id:false, r:"24 hrs",    o:"https://www.beenverified.com/app/optout/search",               p:"https://www.beenverified.com/privacy"},
-  {n:"TruePeopleSearch",  t:"People Search",      id:false, r:"24 hrs",    o:"https://www.truepeoplesearch.com/removal",                     p:"https://www.truepeoplesearch.com/privacy"},
-  {n:"FastPeopleSearch",  t:"People Search",      id:false, r:"24 hrs",    o:"https://www.fastpeoplesearch.com/removal",                     p:"https://www.fastpeoplesearch.com/privacy"},
-  {n:"Radaris",           t:"People Search",      id:false, r:"1–2 wks",   o:"https://radaris.com/page/how-to-remove",                       p:"https://radaris.com/privacy"},
-  {n:"PeopleFinder",      t:"People Search",      id:false, r:"48 hrs",    o:"https://app.intelius.com/privacy-center/?",                      p:"https://www.peoplefinder.com/privacy"},
-  {n:"Nuwber",            t:"People Search",      id:false, r:"48 hrs",    o:"https://nuwber.com/removal/link",                              p:"https://nuwber.com/policy"},
-  {n:"USPhoneBook",       t:"People Search",      id:false, r:"24–48 hrs", o:"https://www.usphonebook.com/opt-out",                          p:"https://www.usphonebook.com/privacy-policy"},
-  {n:"PeekYou",           t:"People Search",      id:false, r:"7–14 days", o:"https://www.peekyou.com/about/contact/optout/",                p:"https://www.peekyou.com/privacy"},
-  {n:"SearchPeopleFree",  t:"People Search",      id:false, r:"48–72 hrs", o:"https://www.searchpeoplefree.com/opt-out",                     p:"https://www.searchpeoplefree.com/privacy-policy"},
-  {n:"FamilyTreeNow",     t:"People Search",      id:false, r:"48 hrs",    o:"https://www.familytreenow.com/optout",                         p:"https://www.familytreenow.com/privacy"},
-  {n:"ZabaSearch",        t:"People Search",      id:false, r:"7 days",    o:"https://app.intelius.com/privacy-center/?",                   p:"https://www.intelius.com/privacy-policy/"},
-  {n:"CocoFinder",        t:"People Search",      id:false, r:"24–72 hrs", o:"https://cocofinder.com/remove-my-info",                        p:"https://cocofinder.com/privacy"},
-  {n:"PeopleLooker",      t:"People Search",      id:false, r:"24 hrs",    o:"https://www.peoplelooker.com/svc/optout/search/optouts",                 p:"https://www.peoplelooker.com/privacy"},
-  {n:"NeighborWho",       t:"People Search",      id:false, r:"24 hrs",    o:"https://www.neighborwho.com/app/optout/search",                p:"https://www.neighborwho.com/privacy"},
-  {n:"MyLife",            t:"People Search",      id:false, r:"3–7 days",  o:"https://www.mylife.com/privacyrequest",          p:"https://www.mylife.com/privacy-policy"},
-  {n:"Wink",              t:"People Search",      id:false, r:"7 days",    o:"https://wink.com/help/optout",                                 p:"https://wink.com/privacy"},
-  {n:"PeopleByName",      t:"People Search",      id:false, r:"48 hrs",    o:"https://www.peoplebyname.com/remove.php",                     p:"https://www.peoplebyname.com/privacy"},
-  {n:"Addresses.com",     t:"People Search",      id:false, r:"7 days",    o:"https://www.addresses.com/optout.php",                         p:"https://www.addresses.com/privacy"},
-{n:"USSearch", t:"People Search", id:false, r:"3–5 days", o:"https://www.ussearch.com/privacy-center", p:"https://www.ussearch.com/privacy"},
-  {n:"PeopleSmart",       t:"People Search",      id:false, r:"7 days",    o:"https://www.peoplesmart.com/optout",                          p:"https://www.peoplesmart.com/faq/privacy"},
-  {n:"CheckPeople",       t:"People Search",      id:false, r:"3–5 days",  o:"https://www.checkpeople.com/opt-out",                          p:"https://www.checkpeople.com/privacy"},
-  {n:"USA People Search", t:"People Search",      id:false, r:"3–5 days",  o:"https://www.usa-people-search.com/manage/",                   p:"https://www.usa-people-search.com/privacy"},
-  {n:"Zosearch",          t:"People Search",      id:false, r:"48–72 hrs", o:"https://www.zosearch.com/opt-out/",                           p:"https://www.zosearch.com/privacy"},
-  {n:"Xlek",              t:"People Search",      id:false, r:"48 hrs",    o:"https://xlek.com/optout",                                     p:"https://xlek.com/privacy"},
-  {n:"Vericora",          t:"People Search",      id:false, r:"48–72 hrs", o:"https://vericora.com/ng/control/optout",                       p:"https://vericora.com/privacy"},
-  {n:"Persopo",           t:"People Search",      id:false, r:"48–72 hrs", o:"https://www.persopo.com/opt-out/",                            p:"https://www.persopo.com/privacy"},
-  {n:"Centeda",           t:"People Search",      id:false, r:"48 hrs",    o:"https://centeda.com/ng/control/optout",                        p:"https://centeda.com/privacy"},
-  {n:"Inforver",          t:"People Search",      id:false, r:"48 hrs",    o:"https://inforver.com/ng/control/optout",                       p:"https://inforver.com/privacy"},
-  {n:"Verecor",           t:"People Search",      id:false, r:"48 hrs",    o:"https://verecor.com/ng/control/optout",                        p:"https://verecor.com/privacy"},
-  {n:"Pub360",            t:"People Search",      id:false, r:"48–72 hrs", o:"https://www.pub360.com/optout.php",                           p:"https://www.pub360.com/privacy"},
-  {n:"LocatePeople",      t:"People Search",      id:false, r:"48 hrs",    o:"https://www.locatepeople.org/opt_out",                         p:"https://www.locatepeople.org/privacy"},
-  {n:"Kwold",             t:"People Search",      id:false, r:"48 hrs",    o:"https://www.kwold.com/opt-out",                               p:"https://www.kwold.com/privacy"},
-  {n:"Clubset",           t:"People Search",      id:false, r:"48 hrs",    o:"https://www.optery.com/rain-street-org-how-to-opt-out-of-rain-street-org-step-by-step-instructions/",                          p:"https://clubset.com/privacy"},
-  {n:"PeopleFinders",     t:"People Search",      id:false, r:"3–5 days",  o:"https://www.peoplefinders.com/manage",                        p:"https://www.peoplefinders.com/privacy"},
-  {n:"SpyFly",            t:"People Search",      id:false, r:"2–3 wks",   o:"https://www.spyfly.com/help-center/privacy-requests",      p:"https://www.spyfly.com/help-center/help-center"},
-  {n:"InfoTracer",        t:"People Search",      id:false, r:"3–5 days",  o:"https://infotracer.com/optout/",                              p:"https://infotracer.com/privacy"},
-  {n:"ClustrMaps",        t:"People Search",      id:false, r:"7–14 days", o:"https://clustrmaps.com/bl/opt-out",                           p:"https://clustrmaps.com/privacy"},
-
-  // ── BACKGROUND CHECK ──
-  {n:"Intelius",          t:"Background Check",   id:false,  r:"7 days",    o:"https://www.intelius.com/privacy-center",                      p:"https://www.intelius.com/privacy.php"},
-  {n:"TruthFinder",       t:"Background Check",   id:false, r:"5–7 days",  o:"https://www.truthfinder.com/opt-out/",                        p:"https://www.truthfinder.com/privacy-policy"},
-  {n:"Instant Checkmate", t:"Background Check",   id:false,  r:"5–7 days",  o:"https://www.instantcheckmate.com/opt-out/",                   p:"https://www.instantcheckmate.com/privacy-policy"},
-  {n:"Cyber Bg Checks",   t:"Background Check",   id:false, r:"1 week",    o:"https://www.cyberbackgroundchecks.com/removal",               p:"https://www.cyberbackgroundchecks.com/privacy"},
-  {n:"LexisNexis",        t:"Background Check",   id:true,  r:"30 days",   o:"https://optout.lexisnexis.com/",                              p:"https://www.lexisnexis.com/en-us/privacy"},
-  {n:"Verisk",            t:"Background Check",   id:true,  r:"30–45 days",o:"https://www.verisk.com/privacy/",                             p:"https://www.verisk.com/privacy/"},
-  {n:"Sterling",          t:"Background Check",   id:false,  r:"30 days",   o:"https://www.sterlingcheck.com/privacy-policy/",               p:"https://www.sterlingcheck.com/privacy-policy/"},
-  {n:"First Advantage",   t:"Background Check",   id:true,  r:"30 days",   o:"https://www.fadv.com/privacy-policy/",                        p:"https://www.fadv.com/privacy-policy/"},
-  // ── PUBLIC RECORDS ──
-  {n:"PublicRecordsNow",  t:"Public Records",     id:false, r:"48–72 hrs", o:"https://www.publicrecordsnow.com/static/view/optout",          p:"https://www.publicrecordsnow.com/privacy"},
-  {n:"PublicRecords360",  t:"Public Records",     id:false, r:"48–72 hrs", o:"https://www.publicrecords360.com/optout.html",                 p:"https://www.publicrecords360.com/privacy"},
-  {n:"Arrests.org",       t:"Public Records",     id:true,  r:"3–7 days",  o:"https://arrests.org/removal/",                                p:"https://arrests.org/privacy"},
-  {n:"Mugshots.com",      t:"Public Records",     id:true,  r:"7–14 days", o:"https://mugshots.com/remove-my-mugshot.html",                  p:"https://mugshots.com/privacy"},
-  {n:"CoreLogic",         t:"Public Records",     id:true,  r:"30–45 days",o:"https://www.corelogic.com/privacy-center/",                   p:"https://www.corelogic.com/privacy/"},
-  {n:"OpenCorporates",    t:"Public Records",     id:false, r:"30+ days",  o:"https://opencorporates.com/contact/remove_information",        p:"https://opencorporates.com/privacy"},
-  {n:"VoterRecords.com",  t:"Public Records",     id:false, r:"7–14 days", o:"https://voterrecords.com/faq",                                p:"https://voterrecords.com/privacy"},
-  {n:"CourtRecords.us",   t:"Public Records",     id:false, r:"7 days",    o:"https://courtrecords.us/optout/",                             p:"https://courtrecords.us/privacy"},
-  {n:"Judyrecords",       t:"Public Records",     id:false, r:"7–14 days", o:"https://www.judyrecords.com/record-removal",                  p:"https://www.judyrecords.com/privacy"},
-  // ── MARKETING ──
-  {n:"Acxiom",            t:"Marketing",          id:false, r:"14 days",   o:"https://isapps.acxiom.com/optout/optout.aspx",                p:"https://www.acxiom.com/privacy"},
-  {n:"Oracle Data Cloud", t:"Marketing",          id:false, r:"30 days",   o:"https://www.oracle.com/legal/data-privacy-inquiry-form/",                         p:"https://www.oracle.com/legal/privacy/"},
-  {n:"Epsilon",           t:"Marketing",          id:false, r:"30 days",   o:"https://legal.epsilon.com/dsr",           p:"https://www.epsilon.com/us/privacy-policy"},
+  // PEOPLE SEARCH
+  {n:"Whitepages",        t:"People Search",      id:false, r:"24–72 hrs", o:"https://www.whitepages.com/suppression-requests",                p:"https://www.whitepages.com/privacy"},
+  {n:"Spokeo",            t:"People Search",      id:false, r:"2–5 days",  o:"https://www.spokeo.com/optout",                                  p:"https://www.spokeo.com/privacy"},
+  {n:"BeenVerified",      t:"People Search",      id:false, r:"24 hrs",    o:"https://www.beenverified.com/app/optout/search",                 p:"https://www.beenverified.com/privacy"},
+  {n:"TruePeopleSearch",  t:"People Search",      id:false, r:"24 hrs",    o:"https://www.truepeoplesearch.com/removal",                       p:"https://www.truepeoplesearch.com/privacy"},
+  {n:"FastPeopleSearch",  t:"People Search",      id:false, r:"24 hrs",    o:"https://www.fastpeoplesearch.com/removal",                       p:"https://www.fastpeoplesearch.com/privacy"},
+  {n:"Radaris",           t:"People Search",      id:false, r:"1–2 wks",   o:"https://radaris.com/page/how-to-remove",                         p:"https://radaris.com/privacy"},
+  {n:"PeopleFinder",      t:"People Search",      id:false, r:"48 hrs",    o:"https://app.intelius.com/privacy-center/",                       p:"https://www.peoplefinder.com/privacy"},
+  {n:"Nuwber",            t:"People Search",      id:false, r:"48 hrs",    o:"https://nuwber.com/removal/link",                                p:"https://nuwber.com/policy"},
+  {n:"USPhoneBook",       t:"People Search",      id:false, r:"24–48 hrs", o:"https://www.usphonebook.com/opt-out",                            p:"https://www.usphonebook.com/privacy-policy"},
+  {n:"PeekYou",           t:"People Search",      id:false, r:"7–14 days", o:"https://www.peekyou.com/about/contact/optout/",                  p:"https://www.peekyou.com/privacy"},
+  {n:"SearchPeopleFree",  t:"People Search",      id:false, r:"48–72 hrs", o:"https://www.searchpeoplefree.com/opt-out",                       p:"https://www.searchpeoplefree.com/privacy-policy"},
+  {n:"FamilyTreeNow",     t:"People Search",      id:false, r:"48 hrs",    o:"https://www.familytreenow.com/optout",                           p:"https://www.familytreenow.com/privacy"},
+  {n:"ZabaSearch",        t:"People Search",      id:false, r:"7 days",    o:"https://app.intelius.com/privacy-center/",                       p:"https://www.intelius.com/privacy-policy/"},
+  {n:"CocoFinder",        t:"People Search",      id:false, r:"24–72 hrs", o:"https://cocofinder.com/remove-my-info",                          p:"https://cocofinder.com/privacy"},
+  {n:"PeopleLooker",      t:"People Search",      id:false, r:"24 hrs",    o:"https://www.peoplelooker.com/svc/optout/search/optouts",          p:"https://www.peoplelooker.com/privacy"},
+  {n:"NeighborWho",       t:"People Search",      id:false, r:"24 hrs",    o:"https://www.neighborwho.com/app/optout/search",                  p:"https://www.neighborwho.com/privacy"},
+  {n:"MyLife",            t:"People Search",      id:false, r:"3–7 days",  o:"https://www.mylife.com/privacyrequest",                          p:"https://www.mylife.com/privacy-policy"},
+  {n:"Wink",              t:"People Search",      id:false, r:"7 days",    o:"https://wink.com/help/optout",                                   p:"https://wink.com/privacy"},
+  {n:"PeopleByName",      t:"People Search",      id:false, r:"48 hrs",    o:"https://www.peoplebyname.com/remove.php",                        p:"https://www.peoplebyname.com/privacy"},
+  {n:"Addresses.com",     t:"People Search",      id:false, r:"7 days",    o:"https://www.addresses.com/optout.php",                           p:"https://www.addresses.com/privacy"},
+  {n:"USSearch",          t:"People Search",      id:false, r:"3–5 days",  o:"https://www.ussearch.com/privacy-center",                        p:"https://www.ussearch.com/privacy"},
+  {n:"PeopleSmart",       t:"People Search",      id:false, r:"7 days",    o:"https://www.peoplesmart.com/optout",                             p:"https://www.peoplesmart.com/faq/privacy"},
+  {n:"CheckPeople",       t:"People Search",      id:false, r:"3–5 days",  o:"https://www.checkpeople.com/opt-out",                            p:"https://www.checkpeople.com/privacy"},
+  {n:"USA People Search", t:"People Search",      id:false, r:"3–5 days",  o:"https://www.usa-people-search.com/manage/",                      p:"https://www.usa-people-search.com/privacy"},
+  {n:"Zosearch",          t:"People Search",      id:false, r:"48–72 hrs", o:"https://www.zosearch.com/opt-out/",                              p:"https://www.zosearch.com/privacy"},
+  {n:"Xlek",              t:"People Search",      id:false, r:"48 hrs",    o:"https://xlek.com/optout",                                        p:"https://xlek.com/privacy"},
+  {n:"Vericora",          t:"People Search",      id:false, r:"48–72 hrs", o:"https://vericora.com/ng/control/optout",                         p:"https://vericora.com/privacy"},
+  {n:"Persopo",           t:"People Search",      id:false, r:"48–72 hrs", o:"https://www.persopo.com/opt-out/",                               p:"https://www.persopo.com/privacy"},
+  {n:"Centeda",           t:"People Search",      id:false, r:"48 hrs",    o:"https://centeda.com/ng/control/optout",                          p:"https://centeda.com/privacy"},
+  {n:"Inforver",          t:"People Search",      id:false, r:"48 hrs",    o:"https://inforver.com/ng/control/optout",                         p:"https://inforver.com/privacy"},
+  {n:"Verecor",           t:"People Search",      id:false, r:"48 hrs",    o:"https://verecor.com/ng/control/optout",                          p:"https://verecor.com/privacy"},
+  {n:"Pub360",            t:"People Search",      id:false, r:"48–72 hrs", o:"https://www.pub360.com/optout.php",                              p:"https://www.pub360.com/privacy"},
+  {n:"LocatePeople",      t:"People Search",      id:false, r:"48 hrs",    o:"https://www.locatepeople.org/opt_out",                           p:"https://www.locatepeople.org/privacy"},
+  {n:"Kwold",             t:"People Search",      id:false, r:"48 hrs",    o:"https://www.kwold.com/opt-out",                                  p:"https://www.kwold.com/privacy"},
+  {n:"PeopleFinders",     t:"People Search",      id:false, r:"3–5 days",  o:"https://www.peoplefinders.com/manage",                          p:"https://www.peoplefinders.com/privacy"},
+  {n:"SpyFly",            t:"People Search",      id:false, r:"2–3 wks",   o:"https://www.spyfly.com/help-center/privacy-requests",            p:"https://www.spyfly.com/help-center/help-center"},
+  {n:"InfoTracer",        t:"People Search",      id:false, r:"3–5 days",  o:"https://infotracer.com/optout/",                                 p:"https://infotracer.com/privacy"},
+  {n:"ClustrMaps",        t:"People Search",      id:false, r:"7–14 days", o:"https://clustrmaps.com/bl/opt-out",                              p:"https://clustrmaps.com/privacy"},
+  // BACKGROUND CHECK
+  {n:"Intelius",          t:"Background Check",   id:false, r:"7 days",    o:"https://www.intelius.com/privacy-center",                        p:"https://www.intelius.com/privacy.php"},
+  {n:"TruthFinder",       t:"Background Check",   id:false, r:"5–7 days",  o:"https://www.truthfinder.com/opt-out/",                           p:"https://www.truthfinder.com/privacy-policy"},
+  {n:"Instant Checkmate", t:"Background Check",   id:false, r:"5–7 days",  o:"https://www.instantcheckmate.com/opt-out/",                      p:"https://www.instantcheckmate.com/privacy-policy"},
+  {n:"Cyber Bg Checks",   t:"Background Check",   id:false, r:"1 week",    o:"https://www.cyberbackgroundchecks.com/removal",                  p:"https://www.cyberbackgroundchecks.com/privacy"},
+  {n:"LexisNexis",        t:"Background Check",   id:true,  r:"30 days",   o:"https://optout.lexisnexis.com/",                                 p:"https://www.lexisnexis.com/en-us/privacy"},
+  {n:"Verisk",            t:"Background Check",   id:true,  r:"30–45 days",o:"https://www.verisk.com/privacy/",                                p:"https://www.verisk.com/privacy/"},
+  {n:"Sterling",          t:"Background Check",   id:false, r:"30 days",   o:"https://www.sterlingcheck.com/privacy-policy/",                  p:"https://www.sterlingcheck.com/privacy-policy/"},
+  {n:"First Advantage",   t:"Background Check",   id:true,  r:"30 days",   o:"https://www.fadv.com/privacy-policy/",                           p:"https://www.fadv.com/privacy-policy/"},
+  // PUBLIC RECORDS
+  {n:"PublicRecordsNow",  t:"Public Records",     id:false, r:"48–72 hrs", o:"https://www.publicrecordsnow.com/static/view/optout",             p:"https://www.publicrecordsnow.com/privacy"},
+  {n:"PublicRecords360",  t:"Public Records",     id:false, r:"48–72 hrs", o:"https://www.publicrecords360.com/optout.html",                   p:"https://www.publicrecords360.com/privacy"},
+  {n:"Arrests.org",       t:"Public Records",     id:true,  r:"3–7 days",  o:"https://arrests.org/removal/",                                   p:"https://arrests.org/privacy"},
+  {n:"Mugshots.com",      t:"Public Records",     id:true,  r:"7–14 days", o:"https://mugshots.com/remove-my-mugshot.html",                     p:"https://mugshots.com/privacy"},
+  {n:"CoreLogic",         t:"Public Records",     id:true,  r:"30–45 days",o:"https://www.corelogic.com/privacy-center/",                      p:"https://www.corelogic.com/privacy/"},
+  {n:"OpenCorporates",    t:"Public Records",     id:false, r:"30+ days",  o:"https://opencorporates.com/contact/remove_information",           p:"https://opencorporates.com/privacy"},
+  {n:"VoterRecords.com",  t:"Public Records",     id:false, r:"7–14 days", o:"https://voterrecords.com/faq",                                   p:"https://voterrecords.com/privacy"},
+  {n:"CourtRecords.us",   t:"Public Records",     id:false, r:"7 days",    o:"https://courtrecords.us/optout/",                                p:"https://courtrecords.us/privacy"},
+  {n:"Judyrecords",       t:"Public Records",     id:false, r:"7–14 days", o:"https://www.judyrecords.com/record-removal",                     p:"https://www.judyrecords.com/privacy"},
+  // MARKETING
+  {n:"Acxiom",            t:"Marketing",          id:false, r:"14 days",   o:"https://isapps.acxiom.com/optout/optout.aspx",                   p:"https://www.acxiom.com/privacy"},
+  {n:"Oracle Data Cloud", t:"Marketing",          id:false, r:"30 days",   o:"https://www.oracle.com/legal/data-privacy-inquiry-form/",         p:"https://www.oracle.com/legal/privacy/"},
+  {n:"Epsilon",           t:"Marketing",          id:false, r:"30 days",   o:"https://legal.epsilon.com/dsr",                                  p:"https://www.epsilon.com/us/privacy-policy"},
   {n:"Nielsen",           t:"Marketing",          id:false, r:"30 days",   o:"https://www.nielsen.com/us/en/legal/privacy-statement/digital-measurement/",p:"https://www.nielsen.com/privacy"},
-  {n:"LiveRamp",          t:"Marketing",          id:false, r:"30 days",   o:"https://liveramp.com/opt_out/",                               p:"https://liveramp.com/privacy/"},
+  {n:"LiveRamp",          t:"Marketing",          id:false, r:"30 days",   o:"https://liveramp.com/opt_out/",                                  p:"https://liveramp.com/privacy/"},
   {n:"Lotame",            t:"Marketing",          id:false, r:"30 days",   o:"https://www.lotame.com/about-lotame/privacy/lotames-products-technologies-and-privacy/opt-out/",p:"https://www.lotame.com/privacy/"},
-  {n:"Neustar",           t:"Marketing",          id:false, r:"30 days",   o:"https://www.home.neustar/privacy/opt-out",                    p:"https://www.home.neustar/privacy"},
-  {n:"Tapad",             t:"Marketing",          id:false, r:"30 days",   o:"https://www.tapad.com/privacy",                              p:"https://www.tapad.com/privacy"},
-  {n:"Merkle",            t:"Marketing",          id:false, r:"30 days",   o:"https://www.merkleinc.com/privacy-policy",                    p:"https://www.merkleinc.com/privacy-policy"},
-  {n:"Harte-Hanks",       t:"Marketing",          id:false, r:"30 days",   o:"https://www.harte-hanks.com/privacy-policy/",                 p:"https://www.harte-hanks.com/privacy-policy/"},
-  {n:"Melissa Data",      t:"Marketing",          id:false, r:"30 days",   o:"https://www.melissa.com/privacy",                            p:"https://www.melissa.com/privacy"},
-  {n:"InfoUSA",           t:"Marketing",          id:false, r:"30 days",   o:"https://www.infousa.com/privacy-policy/",                     p:"https://www.infousa.com/privacy-policy/"},
-  {n:"Haines & Co",       t:"Marketing",          id:false, r:"30 days",   o:"https://www.haines.com/privacy-policy",                       p:"https://www.haines.com/privacy-policy"},
-  {n:"Gravy Analytics",   t:"Marketing",          id:false, r:"30 days",   o:"https://gravyanalytics.com/privacy/",                        p:"https://gravyanalytics.com/privacy/"},
-  // ── B2B / SALES ──
-  {n:"ZoomInfo",          t:"B2B / Sales",        id:false, r:"1–2 wks",   o:"https://privacyrequest.zoominfo.com/remove/verify",                 p:"https://www.zoominfo.com/privacy"},
-  {n:"Lusha",             t:"B2B / Sales",        id:false, r:"1–2 wks",   o:"https://www.lusha.com/privacy-center/request-removal/",                       p:"https://www.lusha.com/privacy-policy/"},
-  {n:"Bombora",           t:"B2B / Sales",        id:false, r:"30 days",   o:"https://bombora.com/opt-out/",                               p:"https://bombora.com/privacy/"},
-
-  // ── LOCATION & PROPERTY ──
-  {n:"BlockShopper",      t:"Location & Property",id:false, r:"2–4 wks",   o:"https://blockshopper.com/info/privacy",                       p:"https://blockshopper.com/info/privacy"},
-  {n:"Homemetry",         t:"Location & Property",id:false, r:"3–7 days",  o:"https://homemetry.com/control/privacy",                       p:"https://homemetry.com/privacy"},
-  // ── REPUTATION ──
-  {n:"Yelp",              t:"Reputation",         id:false, r:"7–14 days", o:"https://www.yelp.com/contact?category=privacy",              p:"https://www.yelp.com/legal/privacy_policy"},
-  {n:"Ripoff Report",     t:"Reputation",         id:false, r:"Varies",    o:"https://www.ripoffreport.com/arbitration",                    p:"https://www.ripoffreport.com/privacy"},
-  {n:"Glassdoor",         t:"Reputation",         id:false, r:"7–14 days", o:"https://help.glassdoor.com/s/article/Privacy-Policy",         p:"https://help.glassdoor.com/s/article/Privacy-Policy"},
-  {n:"PissedConsumer",    t:"Reputation",         id:false, r:"7–14 days", o:"https://www.pissedconsumer.com/privacy-policy.html",          p:"https://www.pissedconsumer.com/privacy-policy.html"},
-
+  {n:"Neustar",           t:"Marketing",          id:false, r:"30 days",   o:"https://www.home.neustar/privacy/opt-out",                       p:"https://www.home.neustar/privacy"},
+  {n:"Tapad",             t:"Marketing",          id:false, r:"30 days",   o:"https://www.tapad.com/privacy",                                  p:"https://www.tapad.com/privacy"},
+  {n:"Merkle",            t:"Marketing",          id:false, r:"30 days",   o:"https://www.merkleinc.com/privacy-policy",                       p:"https://www.merkleinc.com/privacy-policy"},
+  {n:"Harte-Hanks",       t:"Marketing",          id:false, r:"30 days",   o:"https://www.harte-hanks.com/privacy-policy/",                    p:"https://www.harte-hanks.com/privacy-policy/"},
+  {n:"Melissa Data",      t:"Marketing",          id:false, r:"30 days",   o:"https://www.melissa.com/privacy",                               p:"https://www.melissa.com/privacy"},
+  {n:"InfoUSA",           t:"Marketing",          id:false, r:"30 days",   o:"https://www.infousa.com/privacy-policy/",                        p:"https://www.infousa.com/privacy-policy/"},
+  {n:"Haines & Co",       t:"Marketing",          id:false, r:"30 days",   o:"https://www.haines.com/privacy-policy",                          p:"https://www.haines.com/privacy-policy"},
+  {n:"Gravy Analytics",   t:"Marketing",          id:false, r:"30 days",   o:"https://gravyanalytics.com/privacy/",                           p:"https://gravyanalytics.com/privacy/"},
+  // B2B / SALES
+  {n:"ZoomInfo",          t:"B2B / Sales",        id:false, r:"1–2 wks",   o:"https://privacyrequest.zoominfo.com/remove/verify",              p:"https://www.zoominfo.com/privacy"},
+  {n:"Lusha",             t:"B2B / Sales",        id:false, r:"1–2 wks",   o:"https://www.lusha.com/privacy-center/request-removal/",          p:"https://www.lusha.com/privacy-policy/"},
+  {n:"Bombora",           t:"B2B / Sales",        id:false, r:"30 days",   o:"https://bombora.com/opt-out/",                                   p:"https://bombora.com/privacy/"},
+  // LOCATION & PROPERTY
+  {n:"BlockShopper",      t:"Location & Property",id:false, r:"2–4 wks",   o:"https://blockshopper.com/info/privacy",                          p:"https://blockshopper.com/info/privacy"},
+  {n:"Homemetry",         t:"Location & Property",id:false, r:"3–7 days",  o:"https://homemetry.com/control/privacy",                          p:"https://homemetry.com/privacy"},
+  // REPUTATION
+  {n:"Yelp",              t:"Reputation",         id:false, r:"7–14 days", o:"https://www.yelp.com/contact?category=privacy",                  p:"https://www.yelp.com/legal/privacy_policy"},
+  {n:"Ripoff Report",     t:"Reputation",         id:false, r:"Varies",    o:"https://www.ripoffreport.com/arbitration",                       p:"https://www.ripoffreport.com/privacy"},
+  {n:"Glassdoor",         t:"Reputation",         id:false, r:"7–14 days", o:"https://help.glassdoor.com/s/article/Privacy-Policy",            p:"https://help.glassdoor.com/s/article/Privacy-Policy"},
+  {n:"PissedConsumer",    t:"Reputation",         id:false, r:"7–14 days", o:"https://www.pissedconsumer.com/privacy-policy.html",             p:"https://www.pissedconsumer.com/privacy-policy.html"},
 ];
 
 // ── STATE ──
-const STORAGE_KEY = "dmn_checked_v2";
+const STORAGE_KEY = "dmn_checked_v3";
 let checked = {};
 try { checked = JSON.parse(localStorage.getItem(STORAGE_KEY) || "{}"); } catch(e){}
-
 let activeCat = "All";
 let onlyUnchecked = false;
 
-function save() { try { localStorage.setItem(STORAGE_KEY, JSON.stringify(checked)); } catch(e){} }
+function save(){ try{ localStorage.setItem(STORAGE_KEY, JSON.stringify(checked)); }catch(e){} }
+function initials(n){ return n.split(/[\s.\/&]+/).map(w=>w[0]).filter(Boolean).slice(0,2).join("").toUpperCase(); }
 
-function initials(n) {
-  return n.split(/[\s.\/&]+/).map(w=>w[0]).filter(Boolean).slice(0,2).join("").toUpperCase();
+// ── DISCLAIMER ──
+window.addEventListener('DOMContentLoaded', () => {
+  const overlay = document.getElementById('disclaimer-overlay');
+  if(localStorage.getItem('privacyAccepted') === 'true'){
+    overlay.style.display = 'none';
+  }
+  document.getElementById('consent-check').addEventListener('change', function(){
+    document.getElementById('disclaimer-submit').disabled = !this.checked;
+    document.getElementById('disclaimer-submit').classList.toggle('enabled', this.checked);
+  });
+});
+
+function acceptDisclaimer(){
+  const check = document.getElementById('consent-check');
+  if(!check.checked) return;
+  localStorage.setItem('privacyAccepted','true');
+  const card = document.getElementById('jelly-card');
+  const overlay = document.getElementById('disclaimer-overlay');
+  card.style.transform = 'scale(0.85) translateY(40px)';
+  card.style.opacity = '0';
+  overlay.style.opacity = '0';
+  setTimeout(()=>overlay.style.display='none', 600);
 }
 
 // ── BUILD FILTERS ──
 const filtersDiv = document.getElementById("filters");
-["All", ...Object.keys(CATS)].forEach(cat => {
+["All",...Object.keys(CATS)].forEach(cat => {
   const btn = document.createElement("button");
-  btn.className = "f-btn" + (cat==="All"?" active":"");
+  btn.className = "f-btn"+(cat==="All"?" active":"");
   const col = CATS[cat];
-  if (col) {
-    const dot = `<span class="f-dot" style="background:${col.c}"></span>`;
-    btn.innerHTML = dot + cat;
-  } else {
-    btn.textContent = cat;
-  }
-  btn.addEventListener("click", () => {
+  btn.innerHTML = col ? `<span class="f-dot" style="background:${col.c}"></span>${cat}` : cat;
+  btn.addEventListener("click",()=>{
     activeCat = cat;
     filtersDiv.querySelectorAll(".f-btn").forEach(b=>b.classList.remove("active"));
     btn.classList.add("active");
@@ -492,45 +539,42 @@ const filtersDiv = document.getElementById("filters");
 });
 
 // ── RENDER ──
-function render() {
+function render(){
   const q = document.getElementById("search").value.toLowerCase();
   const sortVal = document.getElementById("sort").value;
   const idFilter = document.getElementById("id-filter").value;
 
   let filtered = S.filter(s => {
-    if (activeCat !== "All" && s.t !== activeCat) return false;
-    if (idFilter === "no" && s.id) return false;
-    if (idFilter === "yes" && !s.id) return false;
-    if (onlyUnchecked && checked[s.n]) return false;
-    if (q && !s.n.toLowerCase().includes(q) && !s.t.toLowerCase().includes(q)) return false;
+    if(activeCat !== "All" && s.t !== activeCat) return false;
+    if(idFilter === "no" && s.id) return false;
+    if(idFilter === "yes" && !s.id) return false;
+    if(onlyUnchecked && checked[s.n]) return false;
+    if(q && !s.n.toLowerCase().includes(q) && !s.t.toLowerCase().includes(q)) return false;
     return true;
   });
 
-  if (sortVal === "az") filtered.sort((a,b)=>a.n.localeCompare(b.n));
-  else if (sortVal === "za") filtered.sort((a,b)=>b.n.localeCompare(a.n));
-  else if (sortVal === "time") filtered.sort((a,b)=>(TIME_RANK[a.r]||99)-(TIME_RANK[b.r]||99));
-  else if (sortVal === "time-desc") filtered.sort((a,b)=>(TIME_RANK[b.r]||99)-(TIME_RANK[a.r]||99));
-  else if (sortVal === "done") filtered.sort((a,b)=>(checked[a.n]?1:0)-(checked[b.n]?1:0));
+  if(sortVal==="az") filtered.sort((a,b)=>a.n.localeCompare(b.n));
+  else if(sortVal==="za") filtered.sort((a,b)=>b.n.localeCompare(a.n));
+  else if(sortVal==="time") filtered.sort((a,b)=>(TIME_RANK[a.r]||99)-(TIME_RANK[b.r]||99));
+  else if(sortVal==="time-desc") filtered.sort((a,b)=>(TIME_RANK[b.r]||99)-(TIME_RANK[a.r]||99));
+  else if(sortVal==="done") filtered.sort((a,b)=>(checked[a.n]?1:0)-(checked[b.n]?1:0));
 
   const listEl = document.getElementById("list");
   listEl.innerHTML = "";
-
   document.getElementById("s-count").textContent = q ? `${filtered.length}` : "";
   document.getElementById("sec-count").textContent = `${filtered.length} broker${filtered.length!==1?"s":""}`;
 
-  if (!filtered.length) {
-    listEl.innerHTML = `<div class="empty"><span class="empty-icon">∅</span>No brokers match your filters.</div>`;
-    updateProgress();
-    return;
+  if(!filtered.length){
+    listEl.innerHTML=`<div class="empty"><span class="empty-icon">∅</span>No brokers match your filters.</div>`;
+    updateProgress(); return;
   }
 
-  filtered.forEach((s, i) => {
-    const col = CATS[s.t] || {c:"var(--acc)",bg:"var(--acc-dim)"};
+  filtered.forEach((s,i) => {
+    const col = CATS[s.t]||{c:"var(--acc)",bg:"var(--acc-dim)"};
     const isDone = !!checked[s.n];
     const div = document.createElement("div");
-    div.className = "item" + (isDone ? " done" : "");
-    div.style.animationDelay = `${Math.min(i*10,200)}ms`;
-
+    div.className = "item"+(isDone?" done":"");
+    div.style.animationDelay = `${Math.min(i*9,200)}ms`;
     div.innerHTML = `
       <div class="cb-wrap">
         <input type="checkbox" class="cb" data-name="${s.n}" ${isDone?"checked":""} title="Mark as done">
@@ -541,9 +585,8 @@ function render() {
           <div class="item-name">${s.n}</div>
           <div class="item-tags">
             <span class="cat-tag" style="background:${col.bg};color:${col.c}">${s.t}</span>
-            ${s.id ? `<span class="id-tag">ID might be req.</span>` : ""}
+            ${s.id?`<span class="id-tag">ID might be req.</span>`:""}
             <span class="time-tag">⏱ ${s.r}</span>
-            
           </div>
         </div>
       </div>
@@ -551,83 +594,68 @@ function render() {
         <a class="btn btn-opt" href="${s.o}" target="_blank" rel="noopener">Opt out <span class="arrow">↗</span></a>
         <a class="btn btn-priv" href="${s.p}" target="_blank" rel="noopener">Privacy</a>
       </div>`;
-
     div.querySelector(".cb").addEventListener("change", e => {
       const nm = e.target.dataset.name;
-      if (e.target.checked) checked[nm] = true;
-      else delete checked[nm];
+      if(e.target.checked) checked[nm]=true; else delete checked[nm];
       save();
       div.classList.toggle("done", e.target.checked);
-      const nameEl = div.querySelector(".item-name");
-      if(nameEl) nameEl.style.textDecoration = e.target.checked ? "line-through" : "";
+      div.querySelector(".item-name").style.textDecoration = e.target.checked?"line-through":"";
       updateProgress();
     });
-
     listEl.appendChild(div);
   });
-
   updateProgress();
 }
 
-function updateProgress() {
-  const total = S.length;
-  const done = Object.keys(checked).length;
-  const pct = total ? Math.round(done/total*100) : 0;
-  document.getElementById("pct").textContent = pct + "%";
-  document.getElementById("prog-fill").style.width = pct + "%";
-  document.getElementById("ps-done").textContent = done;
-  document.getElementById("ps-left").textContent = total - done;
-  document.getElementById("ps-total").textContent = total;
+function updateProgress(){
+  const total=S.length, done=Object.keys(checked).length;
+  const pct=total?Math.round(done/total*100):0;
+  document.getElementById("pct").textContent=pct+"%";
+  document.getElementById("prog-fill").style.width=pct+"%";
+  document.getElementById("ps-done").textContent=done;
+  document.getElementById("ps-left").textContent=total-done;
+  document.getElementById("ps-total").textContent=total;
 }
 
-function showOnlyUnchecked() {
-  onlyUnchecked = !onlyUnchecked;
-  const btn = document.querySelector('[onclick="showOnlyUnchecked()"]');
-  if(btn) btn.style.color = onlyUnchecked ? "var(--acc)" : "";
+function showOnlyUnchecked(){
+  onlyUnchecked=!onlyUnchecked;
+  document.getElementById("unchecked-btn").style.color=onlyUnchecked?"var(--acc)":"";
   render();
 }
 
-function resetProgress() {
-  if (!confirm("Reset all progress?")) return;
-  checked = {};
-  save();
-  render();
+function resetProgress(){
+  if(!confirm("Reset all progress?")) return;
+  checked={}; save(); render();
 }
 
-// ── EXPORT ──
-function exportList() {
-  const total = S.length;
-  const done = Object.keys(checked).length;
-  let txt = `DeleteMeNow — Opt-Out Checklist\nGenerated: ${new Date().toLocaleDateString()}\nProgress: ${done}/${total}\n\n`;
-  const cats = [...new Set(S.map(s=>s.t))];
-  cats.forEach(cat => {
-    txt += `\n── ${cat.toUpperCase()} ──\n`;
+function exportList(){
+  const total=S.length, done=Object.keys(checked).length;
+  let txt=`DeleteMeNow — Opt-Out Checklist\nGenerated: ${new Date().toLocaleDateString()}\nProgress: ${done}/${total}\n`;
+  [...new Set(S.map(s=>s.t))].forEach(cat=>{
+    txt+=`\n── ${cat.toUpperCase()} ──\n`;
     S.filter(s=>s.t===cat).forEach(s=>{
-      const mark = checked[s.n] ? "✓" : "○";
-      txt += `${mark} ${s.n.padEnd(25)} ${s.o}\n`;
+      txt+=`${checked[s.n]?"✓":"○"} ${s.n.padEnd(25)} ${s.o}\n`;
     });
   });
-  document.getElementById("export-text").value = txt;
+  document.getElementById("export-text").value=txt;
   document.getElementById("modal").classList.add("open");
 }
 
-function copyExport() {
-  const ta = document.getElementById("export-text");
+function copyExport(){
+  const ta=document.getElementById("export-text");
   ta.select();
   navigator.clipboard.writeText(ta.value).catch(()=>document.execCommand("copy"));
-  const btn = document.querySelector('[onclick="copyExport()"]');
+  const btn=document.querySelector('[onclick="copyExport()"]');
   if(btn){btn.textContent="Copied!";setTimeout(()=>btn.textContent="Copy to clipboard",2000)}
 }
 
-function closeModal() {
-  document.getElementById("modal").classList.remove("open");
-}
+function closeModal(){ document.getElementById("modal").classList.remove("open"); }
+document.getElementById("modal").addEventListener("click",e=>{ if(e.target===document.getElementById("modal")) closeModal(); });
 
-document.getElementById("modal").addEventListener("click", e=>{
-  if(e.target===document.getElementById("modal")) closeModal();
-});
+function openPrivacy(){ document.getElementById("privacyModal").classList.add("open"); }
+function closePrivacy(){ document.getElementById("privacyModal").classList.remove("open"); }
+document.getElementById("privacyModal").addEventListener("click",e=>{ if(e.target===document.getElementById("privacyModal")) closePrivacy(); });
 
-// ── EVENTS ──
 document.getElementById("search").addEventListener("input", render);
 document.getElementById("sort").addEventListener("change", render);
 document.getElementById("id-filter").addEventListener("change", render);
@@ -636,173 +664,3 @@ render();
 </script>
 </body>
 </html>
-
-<!-- PRIVACY POLICY SECTION -->
-<div class="sec" style="margin-top:60px;">
-  <div class="sec-row">
-    <span class="sec-title">Privacy Policy</span>
-    <div class="sec-line"></div>
-    <span class="sec-count">simple + transparent</span>
-  </div>
-</div>
-
-<div style="background:var(--s1);border:1px solid var(--border);border-radius:12px;padding:18px 20px;margin-top:10px;line-height:1.75;color:var(--muted);font-size:13px;">
-
-  <p style="margin-bottom:12px;">
-    <b style="color:var(--text);">DeleteMeNow Privacy Policy</b>
-  </p>
-
-  <p style="margin-bottom:10px;">
-    This website does not collect, store, sell, share, or process any personal data.
-    We do not use cookies, analytics, tracking scripts, or third-party data services.
-  </p>
-
-  <p style="margin-bottom:10px;">
-    All progress tracking (checkbox states) is stored locally in your browser using <span style="color:var(--acc);font-family:'IBM Plex Mono'">localStorage</span>.
-    This data never leaves your device and is not transmitted anywhere.
-  </p>
-
-  <p style="margin-bottom:10px;">
-    We do not require accounts, logins, email addresses, or any form of user identification.
-    There is no user database.
-  </p>
-
-  <p style="margin-bottom:10px;">
-    External links (such as data broker opt-out pages) are provided for convenience only.
-    We are not responsible for their privacy practices nor affiliated with any of the listen services.
-  </p>
-
-  <p style="margin-bottom:0;">
-    If you have questions about this policy, there is no contact form because no data is collected.
-    This site is designed to be fully offline-friendly and privacy-first by default.
-  </p>
-
-  <div id="privacy-fullscreen-bg" style="position: fixed; inset: 0; width: 100vw; height: 100vh; z-index: 999999; display: none; align-items: center; justify-content: center; background: #020617; background: radial-gradient(circle at 0% 0%, #1e1b4b 0%, transparent 50%), radial-gradient(circle at 100% 100%, #581c87 0%, transparent 50%), radial-gradient(circle at 50% 50%, #020617 0%, #000 100%); font-family: 'Inter', system-ui, -apple-system, sans-serif; overflow-y: auto; transition: opacity 0.6s ease;">
-
-    <style>
-        :root {
-            --glass-white: rgba(255, 255, 255, 0.12);
-            --glass-border: rgba(255, 255, 255, 0.35);
-            --text-pure: #ffffff;
-        }
-
-        .jelly-card {
-            position: relative;
-            width: 400px;
-            padding: 35px 35px 45px 35px; 
-            border-radius: 44px;
-            background: var(--glass-white);
-            backdrop-filter: blur(40px) saturate(180%) contrast(110%);
-            -webkit-backdrop-filter: blur(40px) saturate(180%) contrast(110%);
-            border: 1px solid var(--glass-border);
-            box-shadow: 0 40px 100px rgba(0,0,0,0.7), inset 0 10px 15px rgba(255,255,255,0.2);
-            text-align: center;
-            color: var(--text-pure);
-            transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
-            margin: 20px;
-        }
-
-        .jelly-card * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; outline: none; }
-
-        .text-container {
-            background: rgba(0, 0, 0, 0.3);
-            padding: 24px;
-            border-radius: 30px;
-            margin-bottom: 25px;
-            border: 1px solid rgba(255, 255, 255, 0.05);
-        }
-
-        .jelly-card h1 { font-size: 1.4rem; margin: 0 0 10px; font-weight: 800; letter-spacing: -0.03em; }
-        .jelly-card p { font-size: 0.9rem; line-height: 1.6; color: rgba(255, 255, 255, 0.85); }
-
-        .checkbox-wrapper { display: flex; align-items: center; justify-content: center; gap: 12px; margin-bottom: 25px; cursor: pointer; }
-        .checkbox-wrapper input { display: none; }
-
-        .custom-check {
-            width: 22px; height: 22px; border-radius: 7px;
-            background: rgba(255,255,255,0.1); border: 1px solid var(--glass-border);
-            position: relative; transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        }
-
-        input:checked + .custom-check { background: #fff; transform: scale(1.1); box-shadow: 0 0 15px rgba(255,255,255,0.4); }
-        input:checked + .custom-check::after {
-            content: ""; position: absolute; width: 5px; height: 10px; border: solid black;
-            border-width: 0 2.5px 2.5px 0; left: 50%; top: 45%; transform: translate(-50%, -50%) rotate(45deg);
-        }
-
-        .check-label { font-size: 0.85rem; color: rgba(255,255,255,0.6); transition: color 0.3s; }
-        input:checked ~ .check-label { color: #fff; }
-
-        .btn-main {
-            width: 100%; background: rgba(255, 255, 255, 0.1); color: rgba(255, 255, 255, 0.3);
-            border: none; padding: 18px; border-radius: 20px; font-weight: 800; font-size: 1rem;
-            cursor: not-allowed; transition: all 0.4s ease;
-        }
-
-        .btn-main.enabled { background: #fff; color: #000; cursor: pointer; box-shadow: 0 15px 30px rgba(0,0,0,0.3); }
-        .btn-ghost { margin-top: 15px; background: none; color: rgba(255, 255, 255, 0.4); border: none; font-size: 0.8rem; text-decoration: underline; cursor: pointer; }
-
-        #policy-drawer {
-            max-height: 0; overflow: hidden; transition: max-height 0.6s cubic-bezier(0.23, 1, 0.32, 1), opacity 0.4s ease;
-            text-align: left; font-size: 0.78rem; color: rgba(255, 255, 255, 0.7); opacity: 0;
-        }
-        
-        #policy-drawer.open { max-height: 700px; margin-top: 20px; padding-top: 15px; border-top: 1px solid rgba(255, 255, 255, 0.1); opacity: 1; }
-    </style>
-
-    <div class="jelly-card" id="card">
-        <div class="text-container">
-            <h1>Privacy & Policy</h1>
-            <p>We do not track, collect, or sell your data. Pressing "I understand" confirms you agree to our privacy standards.</p>
-        </div>
-
-        <label class="checkbox-wrapper">
-            <input type="checkbox" id="consent-check" onchange="const b=document.getElementById('submit-btn'); if(this.checked){b.className='btn-main enabled'}else{b.className='btn-main'}">
-            <div class="custom-check"></div>
-            <span class="check-label">I agree to the privacy policy</span>
-        </label>
-
-        <button class="btn-main" id="submit-btn" onclick="acceptPrivacy()">I understand</button>
-        
-        <button class="btn-ghost" onclick="document.getElementById('policy-drawer').classList.toggle('open')">Read Policy Details</button>
-
-        <div id="policy-drawer">
-            <p style="margin-bottom: 12px;"><b>Storage:</b> We use <b>LocalStorage</b> to save your preferences directly on your browser. This data is never sent to our servers.</p>
-            <p style="margin-bottom: 12px;"><b>Affiliation:</b> DeleteMeNow is not affiliated with any third-party services linked on this website.</p>
-            <p style="margin-bottom: 12px;"><b>Cookies:</b> We do not use any tracking or advertising cookies.</p>
-            <p style="margin-bottom: 12px;"><b>Exclusion of liability:</b> This project is provided “as is.” The author is not responsible for any damages or issues resulting from its use.</p>
-            <p><b>Privacy:</b> No personal data is collected. You remain anonymous.</p>
-        </div>
-    </div>
-
-    <script>
-        // Check if they already agreed
-        window.addEventListener('DOMContentLoaded', () => {
-            const overlay = document.getElementById('privacy-fullscreen-bg');
-            if (localStorage.getItem('privacyAccepted') !== 'true') {
-                overlay.style.display = 'flex';
-            } else {
-                overlay.remove(); // Get rid of it entirely if they agreed
-            }
-        });
-
-        function acceptPrivacy() {
-            const check = document.getElementById('consent-check');
-            const card = document.getElementById('card');
-            const overlay = document.getElementById('privacy-fullscreen-bg');
-
-            if (check.checked) {
-                // Save to LocalStorage
-                localStorage.setItem('privacyAccepted', 'true');
-                
-                // Animate out
-                card.style.transform = 'scale(0.8) translateY(50px)';
-                card.style.opacity = '0';
-                overlay.style.opacity = '0';
-                setTimeout(() => overlay.remove(), 600);
-            }
-        }
-    </script>
-</div>
-
-</div>
